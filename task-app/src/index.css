@@ -1,0 +1,33 @@
+:root {
+  font-family: "Space Grotesk", "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #162031 0%, #0b1019 45%, #06070b 100%);
+  color: #e9f1ff;
+}
+
+#root {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 3rem) clamp(1.25rem, 4vw, 3.5rem) 3.5rem;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
