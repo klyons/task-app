@@ -121,7 +121,7 @@
 
 .task {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
@@ -136,20 +136,49 @@
   transform: translateX(2px);
 }
 
-.task input {
-  width: 20px;
-  height: 20px;
-  accent-color: #6cb0d9;
-}
-
 .task-text {
   font-size: 1rem;
   color: #e9f1ff;
+  transition: color 0.2s ease;
 }
 
-.task input:checked + .task-text {
-  color: rgba(206, 218, 237, 0.6);
+.task-text--done {
+  color: rgba(206, 218, 237, 0.45);
   text-decoration: line-through;
+}
+
+.btn-done,
+.btn-undo {
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-done {
+  background: linear-gradient(135deg, #4a6cae, #6cb0d9);
+  color: #08111f;
+}
+
+.btn-done:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(53, 88, 140, 0.35);
+}
+
+.btn-undo {
+  background: rgba(120, 155, 200, 0.15);
+  color: rgba(196, 219, 244, 0.8);
+  border: 1px solid rgba(120, 155, 200, 0.3);
+}
+
+.btn-undo:hover {
+  background: rgba(120, 155, 200, 0.25);
+  transform: translateY(-1px);
 }
 
 .task-chip {

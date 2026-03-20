@@ -87,17 +87,20 @@ function App() {
             </div>
           ) : (
             tasks.map((task) => (
-              <label className="task" key={task.id}>
-                <input
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={() => toggleTask(task.id)}
-                />
-                <span className="task-text">{task.text}</span>
+              <div className="task" key={task.id} role="listitem">
+                <span className={`task-text${task.completed ? ' task-text--done' : ''}`}>
+                  {task.text}
+                </span>
                 <span className="task-chip">
                   {task.completed ? 'Done' : 'Active'}
                 </span>
-              </label>
+                <button
+                  className={task.completed ? 'btn-undo' : 'btn-done'}
+                  onClick={() => toggleTask(task.id)}
+                >
+                  {task.completed ? 'Undo' : 'Mark done'}
+                </button>
+              </div>
             ))
           )}
         </div>
